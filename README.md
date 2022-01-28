@@ -52,11 +52,11 @@ Notes:
 
 First of all, let's have a look of the original image:
 
-<img src="/Users/6estates/Desktop/personal_git/text_recognition_1/images/test_image.png" alt="test_image" style="zoom:50%;" />
+<img src="./images/test_image.png" alt="test_image" style="zoom:50%;" />
 
 Noticed that the images have three channels and some noise background, we can convert them to single channel grayscale with totally white background for the ease of character recognition later. 
 
-<img src="/Users/6estates/Desktop/personal_git/text_recognition_1/images/cleaned_image.png" alt="cleaned_image" style="zoom:50%;" />
+<img src="./images/cleaned_image.png" alt="cleaned_image" style="zoom:50%;" />
 
 Now, I have this cleaned version of image using otsu algorithm, which is a method to search for the best threshold value to binarize a grayscale image. A short intro about this otsu algorithm, it bascially tries each pixel value, from 0 to 255, to see which value as a threshold can separate the pixel values into two groups with the minimum weighted average of intra variances.
 
