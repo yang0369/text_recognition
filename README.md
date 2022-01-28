@@ -8,9 +8,9 @@ CAPTCHA (Completely Automated Public Turing test to tell Computers and Humans Ap
 
 There are two sets of imagery provoided: 
 
->  ┣ 📂sampleCaptchas
->  ┃ ┣ 📂input
->  ┃ ┣ 📂output
+ ┣ 📂sampleCaptchas
+ ┃ ┣ 📂input
+ ┃ ┣ 📂output
 
 Here we have 26 images stored in the input folder, among which 25 images have their labels in the output folder, and 1 image ("input100.jpg") for me to predict its content. 
 
