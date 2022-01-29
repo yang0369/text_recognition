@@ -80,9 +80,12 @@ Lastly, I tried with pixel matching - the simplest and most brute-force way. As 
 2. get the mean value of all pixel values in the image.
 3. take the boolean of each pixel by comparing each pixel value with the mean.
 
-Now take glimpse at the dict of image hash, each hash is bascially a 2d array of boolean value.
+Now take glimpse at this dictionary of image hash, each hash is bascially a 2-dimensional array of boolean values.
 
 <img src="./images/Hashdict.png" alt="Hashdict" style="zoom:50%;" />
 
- This image hash has one great feature - they can be used to get the dissimilarity between two images.  e.g. hash of char "L" - hash of char "L" = 0, while hash of char "L" - hash of char "A" = 8. With this dictionary of image hashes, we can easily get the label of any images!
+This image hash has one great feature - it supports mathematical subtraction and the difference represents the the dissimilarity between two images.  e.g. hash of char "L" - hash of char "L" = 0, while hash of char "L" - hash of char "A" = 8. With this dictionary of image hashes, we can easily get the label of any image in this project!
 
+<img src="./images/pipeline.png" alt="pipeline" style="zoom:50%;" />
+
+Here let me briefly explain the pipeline, step 1 bascially decompose the CAPTCHA into individual characters, step 2 applies the dictionary of image hashes to search for the most similar character, step 3 joins all the predicted labels together and return/store the label. That's it.  

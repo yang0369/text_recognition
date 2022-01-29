@@ -29,7 +29,7 @@ def break_image_into_tokens(image: np.array) -> list:
     :param image: image array in scale of 0-255
     :return: tokens
     """
-    crop_img_1 = image[11:21, 5:12]
+    crop_img_1 = image[11:21, 5:13]
     crop_img_2 = image[11:21, 14:22]
     crop_img_3 = image[11:21, 23:31]
     crop_img_4 = image[11:21, 32:40]
