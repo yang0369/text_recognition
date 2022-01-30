@@ -75,7 +75,7 @@ But errors were expected, the example below shows OCR model recognised "5" as "S
 
 Next, I tried to train my own OCR model with 25 images, erm... I knew the data size was too small for a data-hungry monster like neural network. But I guess no harm to try and check the result out. So here we go with a Keras-based RNN model. The result on the validation set was super poor. Since I am not an expert on computer vision, I tried to validate the model with the Keras tutorial dataset, instead of feeding the original thousands of images, I trained the model with 25 images. As a consequence, it performed as bad as mine (see the image below). Therefore, I have decided to skip this episode. 
 
-<img src="/Users/6estates/Desktop/personal_git/text_recognition_1/images/RNN.png" alt="RNN" style="zoom:50%;" />
+<img src="./images/RNN.png" alt="RNN" style="zoom:50%;" />
 
 Lastly, I tried with pixel matching - the simplest and most brute-force way. As all the characters have same font size and same structure, I first cropped each character in the original image to an individual rectangular shape, which I named it as a token. Then converted the token to an image hash using "imagehash" libraray. Subsequently, I stored all the image hashes to a python dictionary, where the key is the label and value is the hash. Here, you may wonder what is the hash of an image? Well, image hash was derived with a few steps below:
 
