@@ -3,6 +3,7 @@ import os
 import numpy as np
 import imagehash
 from PIL import Image
+import matplotlib.pyplot as plt
 
 
 def read_in_images(path: str, image_name: str) -> np.array:
@@ -48,7 +49,7 @@ def convert_token_to_hash(token: np.array) -> imagehash.ImageHash:
     convert the token image to a hash, which can be used to calculate the similarity with
     other image
     :param token: image token
-    :return: hash
+    :return: image hash
     """
     # convert to PIL image type
     image = Image.fromarray(token)
@@ -58,13 +59,14 @@ def convert_token_to_hash(token: np.array) -> imagehash.ImageHash:
     return hash_val
 
 
-def start_preprocessing_image(path: str, image_name: str, return_token: bool = True) -> list:
+def start_preprocessing_image(path: str, image_name: str, return_token: bool = True, display: bool = False) -> list:
     """
     the one-stop data pre-processing pipeline to process the raw image to our required
     list of hash values
     :param path: directory
     :param image_name: name of image
     :param return_token: return hash token if True, else return np.array
+    :param display: to display the original image
     :return: list of hash
     """
     original_img = read_in_images(path, image_name)
@@ -73,6 +75,12 @@ def start_preprocessing_image(path: str, image_name: str, return_token: bool = T
         out = [convert_token_to_hash(i) for i in token_lst]
     else:
         out = token_lst
+
+    if display:
+        plt.figure()
+        plt.title("Original Image:")
+        plt.imshow(original_img, cmap="gray")
+        plt.show()
     return out
 
 
