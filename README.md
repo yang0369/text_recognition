@@ -14,7 +14,7 @@ There are two sets of imagery provoided:
 >  ┃ ┣ 📂output
 >  ```
 
-Here we have 26 images stored in the input folder, among which 25 images have their labels in the output folder, and 1 image ("input100.jpg") will be treated as test data for prediction of its content. 
+Here we have 26 images stored in the input folder, among which 25 images have their labels in the output folder, and 1 image ("input100.jpg") will be treated as test data. The task is to predict the content in the image using model or algorithm. 
 
 
 
